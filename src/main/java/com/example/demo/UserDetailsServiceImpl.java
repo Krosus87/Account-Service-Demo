@@ -21,7 +21,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
     UserRepository userRepository;
-
+    //Rewrite this function - Make else if statements
     public UserRegistrationResponse registerUser(Person person) {
         if (person.getName() == null || person.getUsername() == null || person.getPassword() == null)
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
@@ -45,7 +45,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
         return new UserDeletionResponse(person.get());
     }
-
+    //Rewrite this funtion - Try to make this more efficient
     public List<UserListView> showAllUsers() {
         List<Person> userList = userRepository.findAll();
         List<UserListView> userListView = new ArrayList<>();
@@ -56,7 +56,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
         return userListView;
     }
-
+    //Rewrite this function - Make else if statements and merge last two if statements
     public UserRegistrationResponse grantRole(Map<String, String> newRole) {
         Optional<Person> person = userRepository.findUserByUsernameIgnoreCase(newRole.get("username"));
         if (person.isEmpty())
@@ -73,7 +73,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
         return new UserRegistrationResponse(updatedUser);
     }
-
+    //Rewrite this function - Make else if statements
     public Map<String, String> unlockUser(Map<String, String> unlockRequest) {
         Optional<Person> person = userRepository.findUserByUsernameIgnoreCase(unlockRequest.get("username"));
         if (person.isEmpty())
