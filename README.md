@@ -5,10 +5,10 @@ This is a demo of a Spring Boot application I have written in order to familiari
 # Description
 
 The application offers basic functionality such as:
-* API endpoints
+* API Endpoints
 * Authentication
 * Authorization
-* Persistant database.
+* Persistant Database.
 
 # Installation
 
